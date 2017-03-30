@@ -35,7 +35,6 @@ var isInHundreds = function(input){
   if (input/100 >= 1){
     var c = Math.floor(input/100);
     input = input - (c * 100);
-    console.log(input);
     for(var i = 0; i < c; i++){
       romanNumeral = romanNumeral + "C";
     }
@@ -47,7 +46,6 @@ var isInTens = function(input){
   if (input/10 >= 1){
     var x = Math.floor(input/10);
     input = input - (x * 10);
-    console.log(input);
     for(var i = 0; i < x; i++){
       romanNumeral = romanNumeral + "X";
     }
@@ -55,8 +53,20 @@ var isInTens = function(input){
   return input;
 }
 
+var isInFives = function(input){
+  if (input/5 >= 1) {
+    input = input - 5;
+    romanNumeral = romanNumeral + "V";
+  }
+  return input;
+}
 
+var isInTheOnes = function(input){
+  for(var i = 0; i < input; i++){
+    romanNumeral = romanNumeral + "I";
+  }
 
+}
 
 
 
@@ -89,6 +99,14 @@ $(function() {
 
     var test5 = isInTens(test4);
     console.log("this is what's left after subtracting tens: " + test5);
+    console.log("this is our roman numn: " + romanNumeral);
+
+    var test6 = isInFives(test5);
+    console.log("this is what's left after subtracting fives: " + test6);
+    console.log("this is our roman numn: " + romanNumeral);
+
+    var test7 = isInTheOnes(test6);
+    console.log("this is what's left after subtracting ones: " + test7);
     console.log("this is our roman numn: " + romanNumeral);
 
     $("form").hide();
