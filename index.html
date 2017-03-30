@@ -4,16 +4,29 @@
     <meta charset="utf-8">
     <title>Roman Numeral Creator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <scriptsrc="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
 
   </head>
   <body>
     <div class="Jumbotron">
       <h1>Roman Numeral Calculator</h1>
     </div>
-      
+    <div class="container">
+      <form>
+        <h3>Type here:</h3>
+        <input type="text" id="userInput"><br>
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+      <div id="result">
+        <ul class="alert">
+        </ul>
+        <p> Your result is: <span id="romanResult"></span></p>
+        <button type="click" class="btn btn-danger" id="reload">RELOAD!</button>
+      </div>
+    </div>
+
 
   </body>
 </html>
