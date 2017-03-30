@@ -42,6 +42,14 @@ var isInHundreds = function(input){
   return input;
 }
 
+var isInFifties = function(input){
+  if (input/50 >= 1) {
+    input = input - 50;
+    romanNumeral = romanNumeral + "L";
+  }
+  return input;
+}
+
 var isInTens = function(input){
   if (input/10 >= 1){
     var x = Math.floor(input/10);
@@ -65,7 +73,7 @@ var isInTheOnes = function(input){
   for(var i = 0; i < input; i++){
     romanNumeral = romanNumeral + "I";
   }
-
+  return 0;
 }
 
 
@@ -76,7 +84,8 @@ $(function() {
 
   $("form").submit(function(event) {
     event.preventDefault();
-    var userInput = parseInt($("#userInput").val());
+    var originalInput = $("#userInput").val();
+    var userInput = parseInt(originalInput);
     console.log(userInput);
 
     var test1 = isNotTooBig(userInput);
@@ -84,6 +93,8 @@ $(function() {
       $(".alert").append("<li> Your number is too large. Try again. </li>")
       $("p").hide();
     }
+
+    console.log(originalInput + ": this is what we typed in");
 
     var test2 = isInThousands(userInput);
     console.log("this is what's left after subtracting thous: " + test2);
@@ -97,17 +108,51 @@ $(function() {
     console.log("this is what's left after subtracting hundreds: " + test4);
     console.log("this is our roman numn: " + romanNumeral);
 
-    var test5 = isInTens(test4);
-    console.log("this is what's left after subtracting tens: " + test5);
+    var test5 = isInFifties(test4);
+    console.log("this is what's left after subtracting hundreds: " + test5);
     console.log("this is our roman numn: " + romanNumeral);
 
-    var test6 = isInFives(test5);
-    console.log("this is what's left after subtracting fives: " + test6);
+
+    var test6 = isInTens(test5);
+    console.log("this is what's left after subtracting tens: " + test6);
     console.log("this is our roman numn: " + romanNumeral);
 
-    var test7 = isInTheOnes(test6);
-    console.log("this is what's left after subtracting ones: " + test7);
+    var test7 = isInFives(test6);
+    console.log("this is what's left after subtracting fives: " + test7);
     console.log("this is our roman numn: " + romanNumeral);
+
+    var test8 = isInTheOnes(test7);
+    console.log("this is what's left after subtracting ones: " + test8);
+    console.log("this is our roman numn: " + romanNumeral);
+
+    var isFourIs = function(input) {
+      //for the ones place
+      if (originalInput.charAt(originalInput.length - 1) === "4"){
+        romanNumeral = romanNumeral.substring(0, romanNumeral.length -4) + "IV";
+      }
+      if (originalInput.charAt(originalInput.length - 1) === "9"){
+        romanNumeral = romanNumeral.substring(0, romanNumeral.length -4) + "IX";
+      }
+      return romanNumeral;
+    }
+
+    var isFourXs = function(input) {
+      //for forties
+      if((romanNumeral.indexOf("XXXX")>=0) && (romanNumeral.indexOf("L") < 0)){
+        romanNumeral.replace(/X{4}/g, "XL");
+      }
+      //for nineties
+      if((romanNumeral.indexOf("XXXX")>=0) && (romanNumeral.indexOf("L") >= 0)){
+        romanNumeral.replace(/X{4}/g, "XC");
+      }
+      return romanNumeral;
+    }
+
+    var test9 = isFourIs(originalInput);
+    console.log("this is what's going on if it ends in a 4 or 9: " +  test9);
+
+    var test10 = isFourXs(romanNumeral);
+    console.log("40s and 90s ought to work: " + test10);
 
     $("form").hide();
     $("#result").show();
