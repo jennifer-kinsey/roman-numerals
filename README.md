@@ -10,34 +10,30 @@ _Webpage is a good practice example of separating business logic and UI logic. I
 
 ## Setup/Installation Requirements
 
-* _Ensure internet connection_
-* _Open Terminal_
-* _Change into the desktop directory ('cd desktop')_
-* _Run "git clone  https://github.com/gravytates/pig-latin.git"_
-* _Open 'pig-latin' folder in desktop_
-* _Open 'index.html' file_
+*  git clone  https://github.com/jennifer-kinsey/roman-numerals.git
+*  Open 'pig-latin' folder in desktop
+*  Open 'index.html' file
 
 ## Known Bugs
 
-_There are no known bugs at this time._
+There are no known bugs at this time.
 
 ## Support and contact details
 
-_Please contact Nick Powell at nickpowells@gmail.com if you have any questions or need any support._
+Please contact Nick Powell at nickpowells@gmail.com if you have any questions or need any support.
 
 ## Technologies Used
 
-_Webpage is built with HTML, CSS (specifically using a default bootstrap.css file/framework with minimal styling), JavaScript, and the jQuery3.2.0 files/framework. Jennifer Kinsey and Nick Powell and Epicodus are not liable for anything._
+Webpage is built with HTML, CSS (specifically using a default bootstrap.css file/framework with minimal styling), JavaScript, and the jQuery3.2.0 files/framework. Jennifer Kinsey and Nick Powell and Epicodus are not liable for anything.
 
 ### License
 
-_Copyright (c) 2017 Jennifer Kinsey and Nick Powell. This software is licensed under the MIT license._
+Copyright (c) 2017 Jennifer Kinsey and Nick Powell. This software is licensed under the MIT license.
 
 
-## _BDE_
+## _BDD_
 
-* _Behavior Driven Design_
-
+* Behavior Driven Design
 
 * _If you input a number greater than 3,999, it will alert user to input valid number_
 * _Input: 98306989030_
