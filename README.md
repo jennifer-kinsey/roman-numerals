@@ -8,14 +8,16 @@
 
 _Webpage is a good practice example of separating business logic and UI logic. It performs the roman numeral calculation separately than the UI if/else which displays to the user._
 
+(Keeping this since it was really fun to think through this problem.)
+
 ## Setup/Installation Requirements
 
-* _Ensure internet connection_
-* _Open Terminal_
-* _Change into the desktop directory ('cd desktop')_
-* _Run "git clone  https://github.com/gravytates/pig-latin.git"_
-* _Open 'pig-latin' folder in desktop_
-* _Open 'index.html' file_
+```
+git clone  https://github.com/jennifer-kinsey/roman-numerals
+cd roman-numerals
+```
+* open with text editor of choice
+* open index.html in browser
 
 ## Known Bugs
 
